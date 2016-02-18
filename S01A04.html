@@ -1,0 +1,35 @@
+<html>
+    <head><title>IIFE printing name age and city of a person</title>
+    </head>
+    <body>
+        <h2> Enter the following Data.</h2>
+        <strong>Name :</strong>
+        <input type="Name" id="name"><br><br>
+        <strong> Age: </strong>
+        <input type="text" id="age"><br><br>
+        <strong>City :</strong>
+        <input type = "text" id="city"><br><br>
+        <button type="button" onclick="add()">Submit!</button>
+        <p id="display"></p>
+        
+       <script>
+            var add = function(){
+                var x,y;
+                x= document.getElementById("age").value;
+                y=document.getElementById("name").value;
+                z=document.getElementById("city").value;
+                try{
+                    if(x == "" || y=="" || y== null) throw "field cannot be empty";
+                    if(isNaN(x)) throw "not a number";
+                    x = Number(x);
+                    if(x < 1) throw "age cannot be negative";
+                }
+                catch(err){
+                    console.log(err);
+                }
+               document.getElementById("display").innerHTML = "Name is " + y +"; Age is " + x+ "; city is "+ z; 
+            };
+            
+        </script>
+    </body>
+</html>
